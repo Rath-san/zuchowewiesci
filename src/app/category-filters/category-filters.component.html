@@ -1,0 +1,6 @@
+<ng-container *ngFor="let category of categories">
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" [id]="'filterCheckbox' + category" [name]="category">
+    <label class="custom-control-label" [for]="'filterCheckbox' + category">{{ category }}</label>
+  </div>
+</ng-container>
