@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryFiltersComponent implements OnInit {
 
-  categories;
+  categories: string[];
+
+  filterQuery: any;
 
   constructor() {
     this.categories = [
@@ -20,6 +22,17 @@ export class CategoryFiltersComponent implements OnInit {
       'instrumenty metodyczne',
       'inne'
     ];
+
+    this.filterQuery = {
+      'metodyka': false,
+      'formy pracy': false,
+      'program gromady': false,
+      'działanie gromady': false,
+      'praca z kadrą': false,
+      'ZHP': false,
+      'instrumenty metodyczne': false,
+      'inne': false
+    };
   }
 
   ngOnInit() {

@@ -1,3 +1,5 @@
+@import "../../../styles/abstract/_variables";
+
 :host {
   margin: 0 15px 30px 15px;
   max-width: 30%;
@@ -8,7 +10,7 @@
     content: "";
     position: absolute;
     display: none;
-    border: 6px solid red;
+    border: 6px solid $primary;
     top: -3px;
     left: -3px;
     bottom: -3px;
@@ -25,13 +27,14 @@
     }
   }
   &-category {
-    background-color: red;
+    background-color: $primary;
     position: absolute;
     bottom: 10px;
     left: 5px;
     font-size: 20px;
     font-weight: 700;
     padding: .3em 3em .3em .3em;
+    max-width: 75%;
   }
   &-body {
     padding: 1.2em .8em;

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 // router
 import { RouterModule, Routes } from '@angular/router';
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 
 // pipes
 import { ImageDefaultPipe } from './_pipes/image-default.pipe';
+import { CheckboxComponent } from './_components/_inputs/checkbox/checkbox.component';
 
 const appRoutes: Routes = [
   {
@@ -70,11 +72,13 @@ const appRoutes: Routes = [
     ContactComponent,
     DropdownDirective,
     HomeComponent,
-    ImageDefaultPipe
+    ImageDefaultPipe,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       {

@@ -1,32 +1,46 @@
-a {
-  cursor: pointer;
-}
-
+@import "../../styles/abstract/_variables";
 .navbar {
-  background-color: #fff;
+  background-color: $white;
+  &-brand {
+    svg {
+      fill: #f8c409;
+    }
+  }
   &-nav {
     flex-grow: 1;
   }
 }
 
-.nav-item {
-  &.active {
-    position: relative;
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      background-color: red;
-      bottom: 0;
-      width: 100%;
-      height: .2em;
+.nav {
+  &-item {
+    &.active {
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: $primary;
+        bottom: 0;
+        width: 100%;
+        height: .2em;
+      }
     }
+  }
+  &-link {
+    cursor: pointer;
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 }
 
 .dropdown-menu {
   width: 100%;
   left: 0;
-  top: 133px;
+  top: 130px;
   position: absolute;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
 }
