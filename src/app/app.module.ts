@@ -21,6 +21,9 @@ import { ContactComponent } from './contact/contact.component';
 import { DropdownDirective } from './_directives/dropdown.directive';
 import { HomeComponent } from './home/home.component';
 
+// pipes
+import { ImageDefaultPipe } from './_pipes/image-default.pipe';
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -66,7 +69,8 @@ const appRoutes: Routes = [
     ZuchoweWiesciComponent,
     ContactComponent,
     DropdownDirective,
-    HomeComponent
+    HomeComponent,
+    ImageDefaultPipe
   ],
   imports: [
     BrowserModule,

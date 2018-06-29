@@ -1,7 +1,7 @@
 <ng-container *ngIf="type === 'separated'">
-  <div class="card active">
-    <div class="card-img">
-      <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+  <div class="card card--separated active">
+    <div class="card-img-wrapper">
+      <img class="card-img" src="http://via.placeholder.com/350x150" alt="Card image cap">
       <div class="card-category">
         kategoria
       </div>
@@ -23,13 +23,12 @@
 </ng-container>
 
 <ng-container *ngIf="type === 'picture'">
-  <div class="card bg-dark text-white">
-    <img class="card-img" src="http://via.placeholder.com/350x150" alt="Card image">
+  <div class="card card--picture text-white">
+  <img class="card-img" src="http://via.placeholder.com/380x380" heigth="380" alt="Card image">
     <div class="card-img-overlay">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
-        bit longer.</p>
-      <p class="card-text">Last updated 3 mins ago</p>
+      <h5 class="card-title">
+        <img src="none" alt="">
+      </h5>
     </div>
   </div>
 </ng-container>
