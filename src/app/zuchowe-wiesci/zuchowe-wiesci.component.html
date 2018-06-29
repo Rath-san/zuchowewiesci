@@ -1,1 +1,9 @@
-<app-article-card></app-article-card>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let article of articles">
+        <app-article-card [type]="'picture'" [routerLink]="['/zuchowewiesci', article.id]"></app-article-card>
+      </div>
+    </div>
+  </div>
+</section>

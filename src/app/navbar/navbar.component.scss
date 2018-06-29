@@ -2,8 +2,11 @@ a {
   cursor: pointer;
 }
 
-.navbar-nav {
+.navbar {
+  background-color: #fff;
+  &-nav {
     flex-grow: 1;
+  }
 }
 
 .nav-item {
@@ -21,10 +24,9 @@ a {
   }
 }
 
-
 .dropdown-menu {
-    // display: block;
-    width: 100%;
-    left: 0;
-    position: static;
+  width: 100%;
+  left: 0;
+  top: 133px;
+  position: absolute;
 }

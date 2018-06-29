@@ -40,6 +40,10 @@ const appRoutes: Routes = [
     component: ZuchoweWiesciComponent
   },
   {
+    path: 'zuchowewiesci/:id',
+    component: ArticleDetailComponent
+  },
+  {
     path: 'onas',
     component: AboutComponent
   },

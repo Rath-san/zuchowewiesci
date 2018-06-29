@@ -1,3 +1,57 @@
 :host {
-    margin: 0 15px 30px 15px;
+  margin: 0 15px 30px 15px;
+  max-width: 30%;
+}
+
+.card {
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+    border: 6px solid red;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+  }
+  &-img {
+    position: relative;
+    &-top {
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+  &-category {
+    background-color: red;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: .3em 3em .3em .3em;
+  }
+  &-body {
+    padding: 1.2em .8em;
+  }
+  &-title{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-footer {
+    padding: .5em .8em 1.2em .8em;
+    background-color: #fff;
+    border-top: none;
+  }
+  .article-data {
+    margin-bottom: 0;
+  }
+  &:hover {
+    &::after {
+      display: block;
+    }
+  }
 }

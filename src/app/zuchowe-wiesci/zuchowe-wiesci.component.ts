@@ -7,7 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZuchoweWiesciComponent implements OnInit {
 
-  constructor() { }
+  articles = [];
+
+  constructor() {
+    this.articles = [
+      {
+        id: 1
+      },
+      {
+        id: 2
+      },
+      {
+        id: 3
+      },
+      {
+        id: 4
+      }
+    ];
+  }
 
   ngOnInit() {
   }

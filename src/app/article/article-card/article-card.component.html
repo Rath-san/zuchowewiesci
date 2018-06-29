@@ -1,15 +1,35 @@
-<div class="card active" style="width: 380px;">
-  <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
-  <div class="card-categody">
-    kategoria
+<ng-container *ngIf="type === 'separated'">
+  <div class="card active">
+    <div class="card-img">
+      <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+      <div class="card-category">
+        kategoria
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Card title that is suer duper long</h5>
+    </div>
+    <div class="card-footer">
+      <p class="article-data">
+        <span class="article-data__author">
+          Name & Surname
+        </span>
+        <span class="article-data__date">
+          <br>01.01.2019
+        </span>
+      </p>
+    </div>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
+</ng-container>
+
+<ng-container *ngIf="type === 'picture'">
+  <div class="card bg-dark text-white">
+    <img class="card-img" src="http://via.placeholder.com/350x150" alt="Card image">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
+        bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p>
+    </div>
   </div>
-  <div class="card-footer">
-    <small>
-      Name & Surname
-      <br> 01.01.2019
-    </small>
-  </div>
-</div>
+</ng-container>
