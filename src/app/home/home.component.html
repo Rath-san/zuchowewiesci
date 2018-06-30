@@ -1,8 +1,8 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-4" *ngFor="let article of articles">
-        <app-article-card [routerLink]="['/article', article.id]" [type]="'separated'"></app-article-card>
+      <div class="col-4" *ngFor="let article of articles | async">
+        <app-article-card [routerLink]="['/article', article.id]" [type]="'separated'" [item]="article"></app-article-card>
       </div>
     </div>
   </div>

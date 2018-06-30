@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // router
 import { RouterModule, Routes } from '@angular/router';
@@ -25,6 +26,10 @@ import { HomeComponent } from './home/home.component';
 // pipes
 import { ImageDefaultPipe } from './_pipes/image-default.pipe';
 import { CheckboxComponent } from './_components/_inputs/checkbox/checkbox.component';
+import { LoadSpinnerComponent } from './_components/load-spinner/load-spinner.component';
+import { ApiService } from './_services/api.service';
+import { ArticleService } from './_services/article.service';
+import { SearchService } from './_services/search.service';
 
 const appRoutes: Routes = [
   {
@@ -73,12 +78,14 @@ const appRoutes: Routes = [
     DropdownDirective,
     HomeComponent,
     ImageDefaultPipe,
-    CheckboxComponent
+    CheckboxComponent,
+    LoadSpinnerComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       {
@@ -86,7 +93,11 @@ const appRoutes: Routes = [
       }
     )
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    ArticleService,
+    SearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,13 +1,21 @@
 <ng-container *ngIf="type === 'separated'">
   <div class="card card--separated active">
-    <div class="card-img-wrapper">
-      <img class="card-img" src="http://via.placeholder.com/380x250" alt="Card image cap">
-      <div class="card-category">
-        metodyczne
-      </div>
-    </div>
+    <picture class="card-img-wrapper">
+      <!-- min -->
+      <source media="(max-width: 900px)" srcset="http://via.placeholder.com/320x250">
+      <!-- mid -->
+      <source media="(max-width: 900px)" srcset="http://via.placeholder.com/320x250">
+      <!-- lg -->
+      <img class="card-img" src="{{ featuredImage }}" alt="Card image cap">
+      <!-- <div class="card-category"> -->
+        <!-- zhp
+        metodyka
+        sposoby realizacji ipt
+        costam jescze -->
+      <!-- </div> -->
+    </picture>
     <div class="card-body">
-      <h5 class="card-title">Card title that is super duper long</h5>
+      <h5 class="card-title">{{ title }}</h5>
     </div>
     <div class="card-footer">
       <p class="article-data">
@@ -15,7 +23,8 @@
           Name & Surname
         </span>
         <span class="article-data__date">
-          <br>01.01.2019
+          <!-- <br>01.01.2019 -->
+          <br>{{ publishDate }}
         </span>
       </p>
     </div>
@@ -24,7 +33,7 @@
 
 <ng-container *ngIf="type === 'picture'">
   <div class="card card--picture text-white">
-  <img class="card-img" src="http://via.placeholder.com/380x380" heigth="380" alt="Card image">
+    <img class="card-img" src="http://via.placeholder.com/380x380" heigth="380" alt="Card image">
     <div class="card-img-overlay">
       <h5 class="card-title">
         <img src="none" alt="">
