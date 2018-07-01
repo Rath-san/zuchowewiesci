@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-zuchowe-wiesci',
-  templateUrl: './zuchowe-wiesci.component.html',
-  styleUrls: ['./zuchowe-wiesci.component.scss']
+  selector: 'app-scout-news',
+  templateUrl: './scout-news.component.html',
+  styleUrls: ['./scout-news.component.scss']
 })
-export class ZuchoweWiesciComponent implements OnInit {
+export class ScoutNewsComponent implements OnInit {
 
   articles = [];
 

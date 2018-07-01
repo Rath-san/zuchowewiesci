@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService, Page } from './api.service';
 
 import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ArticleService {
 
   constructor(
     private _apiService: ApiService
-  ) {}
+  ) { }
 
   public getBlogPages() {
     const params = {
@@ -25,6 +26,22 @@ export class ArticleService {
       'fields': 'feed_image_fullwidth'
     };
     return this._apiService.getPages(params);
+  }
+
+
+  public getBlogDetail(slug: string) {
+    const params = {
+      'type': 'blog.BlogPage',
+      'slug': slug,
+      'fields': '*'
+    };
+    return this._apiService.getPages(params)
+          .pipe(
+        map((x: any) => {
+          return x.items[0];
+        })
+      );
+    // ex: http://localhost:8000/api/v2/pages/?type=blog.BlogPage&slug=blog-page-1&fields=*
   }
 
 }

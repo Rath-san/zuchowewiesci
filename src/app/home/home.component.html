@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-4" *ngFor="let article of articles | async">
-        <app-article-card [routerLink]="['/article', article.id]" [type]="'separated'" [item]="article"></app-article-card>
+        <app-article-card [routerLink]="['/articles', article.meta.slug]" [type]="'separated'" [item]="article"></app-article-card>
       </div>
     </div>
   </div>

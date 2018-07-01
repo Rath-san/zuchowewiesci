@@ -18,7 +18,7 @@ import { ArticleDetailComponent } from './article/article-detail/article-detail.
 // errors
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { AboutComponent } from './about/about.component';
-import { ZuchoweWiesciComponent } from './zuchowe-wiesci/zuchowe-wiesci.component';
+import { ScoutNewsComponent } from './scout-news/scout-news.component';
 import { ContactComponent } from './contact/contact.component';
 import { DropdownDirective } from './_directives/dropdown.directive';
 import { HomeComponent } from './home/home.component';
@@ -30,27 +30,29 @@ import { LoadSpinnerComponent } from './_components/load-spinner/load-spinner.co
 import { ApiService } from './_services/api.service';
 import { ArticleService } from './_services/article.service';
 import { SearchService } from './_services/search.service';
+import { SafeHtmlPipe } from './_pipes/safe-html.pipe';
+import { AboutService } from './_services/about.service';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/articles',
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: 'articles',
     component: HomeComponent
   },
   {
-    path: 'article/:id',
+    path: 'articles/:slug',
     component: ArticleDetailComponent
   },
   {
     path: 'zuchowewiesci',
-    component: ZuchoweWiesciComponent
+    component: ScoutNewsComponent
   },
   {
-    path: 'zuchowewiesci/:id',
+    path: 'zuchowewiesci/:slug',
     component: ArticleDetailComponent
   },
   {
@@ -73,13 +75,14 @@ const appRoutes: Routes = [
     ArticleDetailComponent,
     PageNotFoundComponent,
     AboutComponent,
-    ZuchoweWiesciComponent,
+    ScoutNewsComponent,
     ContactComponent,
     DropdownDirective,
     HomeComponent,
     ImageDefaultPipe,
     CheckboxComponent,
-    LoadSpinnerComponent
+    LoadSpinnerComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
@@ -96,7 +99,8 @@ const appRoutes: Routes = [
   providers: [
     ApiService,
     ArticleService,
-    SearchService
+    SearchService,
+    AboutService
   ],
   bootstrap: [AppComponent]
 })

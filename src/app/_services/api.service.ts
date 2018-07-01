@@ -45,7 +45,21 @@ export class ApiService {
     return this._httpClient.get(this.pagesUrl, { params });
   }
 
-  public getImages(id: number) {
+  public getPage(slug: string) {
+    const params = {
+      'slug': slug,
+      'fields': slug
+    };
+    console.log(params);
+    return this._httpClient.get(`${this.pagesUrl}`, { params })
+      .pipe(
+        map((x: any) => {
+          return x.items[0];
+        })
+      );
+  }
+
+  public getImage(id: number) {
     return this._httpClient.get(`${this.imagesUrl}${id}`, {});
   }
 

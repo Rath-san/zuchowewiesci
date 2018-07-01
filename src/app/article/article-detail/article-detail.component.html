@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      details
+    <img src="{{ feedImageFullWidth }}" alt="">
+      <h1>{{ title }}</h1>
+      <h2>{{ intro }}</h2>
+      <p>{{ date }}</p>
+      <div class="body" [innerHTML]="body | safeHtml"></div>
       <button (click)="goToHome()">back to home</button>
     </div>
   </div>
